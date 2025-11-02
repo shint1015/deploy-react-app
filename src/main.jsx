@@ -1,9 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import {
-    RouterProvider,
-    createBrowserRouter
-} from 'react-router';
+import { RouterProvider, createBrowserRouter } from 'react-router';
 import './index.css';
 import App from './App.jsx';
 import ChatPage from './pages/ChatPage.jsx';
@@ -17,22 +14,22 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <ChatPage />
+                element: <ChatPage />,
             },
             {
                 path: 'summary',
-                element: <SummaryPage />
+                element: <SummaryPage />,
             },
             {
                 path: '*',
-                element: <NotFoundPage />
-            }
-        ]
+                element: <NotFoundPage />,
+            },
+        ],
     },
     {
         path: '*',
-        element: <NotFoundPage />
-    }
+        element: <NotFoundPage />,
+    },
 ]);
 
 createRoot(document.getElementById('root')).render(
