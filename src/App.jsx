@@ -1,20 +1,28 @@
-import { useState } from 'react';
+import { NavLink, Outlet } from 'react-router';
 import './App.css';
 
 function App() {
-    const [count, setCount] = useState(0);
+    const navLinkClassName = ({ isActive }) => `nav-link${isActive ? ' active' : ''}`;
 
     return (
-        <>
-            <h1>My name is Shintarooo!</h1>
-            <div className='card'>
-                <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-                <p>
-                    Edit <code>src/App.jsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className='read-the-docs'>This is my portfolio!</p>
-        </>
+        <div className='app-shell'>
+            <nav className='top-nav'>
+                <div className='brand'>Shintaro Miyata</div>
+                <div className='nav-links'>
+                    <NavLink to='/' end className={navLinkClassName}>
+                        Chat
+                    </NavLink>
+                    <NavLink to='/summary' className={navLinkClassName}>
+                        Summary
+                    </NavLink>
+                </div>
+            </nav>
+            <main className='route-container'>
+                <div className='route-content'>
+                    <Outlet />
+                </div>
+            </main>
+        </div>
     );
 }
 
