@@ -21,11 +21,11 @@ const router = createBrowserRouter([
                 element: <SummaryPage />,
             },
             {
-                path: '*',
+                path: '404',
                 element: <NotFoundPage />,
             },
             {
-                path: '404',
+                path: '*',
                 element: <NotFoundPage />,
             },
         ],
