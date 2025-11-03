@@ -21,7 +21,7 @@ const router = createBrowserRouter([
                 element: <SummaryPage />,
             },
             {
-                path: '404',
+                path: 'not-found',
                 element: <NotFoundPage />,
             },
             {
